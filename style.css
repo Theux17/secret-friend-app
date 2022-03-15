@@ -1,0 +1,109 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+form {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;          
+}
+
+form #container #fields-container .container-names-numbers {
+    display: flex;
+}
+
+form #container h1 {
+    text-align: center;
+    margin-bottom: 53px;
+}
+
+form #container #fields-container .container-names-numbers input {
+    width: 290.09px;
+    height: 35.89px;
+
+    background: #F0F2EB;
+    border-radius: 4px;
+    margin-bottom: 16px;
+
+    padding-left: 8px;
+    color: black;
+}
+
+form #container #fields-container .container-names-numbers fieldset legend {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+form #container #fields-container .container-names-numbers .container-names fieldset input {
+    margin-right: 144.58px;
+}
+
+form #container #fields-container .buttons {
+    display: flex;
+}
+
+form #container #fields-container .buttons #add-friend {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 18px;
+
+    width: 149px;
+    height: 42px;
+    margin-top: 26.11px;
+
+    background: #2E42E6;
+    border-radius: 8px;
+    cursor: pointer;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.5px;
+
+    color: #EEEFEC;
+
+    transition: all 400ms;
+}
+
+form #container #fields-container .buttons #add-friend:hover {
+    background: #394de0;
+}
+
+form #container #fields-container .buttons #draw-friends {
+    margin: 0 20%;
+    margin-top: 116px;
+    width: 149px;
+    height: 42px;
+
+    background: #2E42E6;
+    border-radius: 8px;
+    cursor: pointer;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.5px;
+
+    color: #EEEFEC;
+
+    transition: all 400ms;
+}
+
+form #container #fields-container .buttons #draw-friends:hover {
+    background: #394de0;
+}
