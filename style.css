@@ -7,20 +7,30 @@
 
 form {
     width: 100vw;
-    height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;          
 }
 
-form #container #fields-container .container-names-numbers {
+form #container {
+    box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+    border-radius: 4px;    
+    margin-top: 50px;
+}  
+
+form #container #fields-container .container-names-numbers .container-friend{
     display: flex;
+    align-items: center;
+    margin-left: 14px;
+    margin-right: 14px;
+
 }
 
 form #container h1 {
     text-align: center;
     margin-bottom: 53px;
+    margin-top: 14px;
 }
 
 form #container #fields-container .container-names-numbers input {
@@ -43,8 +53,16 @@ form #container #fields-container .container-names-numbers fieldset legend {
     line-height: 18px;
 }
 
-form #container #fields-container .container-names-numbers .container-names fieldset input {
+form #container #fields-container .container-names-numbers .container-friend .name fieldset input {
     margin-right: 144.58px;
+}
+
+form #container #fields-container .container-names-numbers .container-numbers fieldset {
+    position: relative
+}
+form #container #fields-container .container-names-numbers .container-numbers span {
+    position: absolute;
+    cursor: pointer;
 }
 
 form #container #fields-container .buttons {
@@ -61,6 +79,7 @@ form #container #fields-container .buttons #add-friend {
     width: 149px;
     height: 42px;
     margin-top: 26.11px;
+    margin-left: 14px;
 
     background: #2E42E6;
     border-radius: 8px;
@@ -85,6 +104,8 @@ form #container #fields-container .buttons #add-friend:hover {
 form #container #fields-container .buttons #draw-friends {
     margin: 0 20%;
     margin-top: 116px;
+    margin-bottom: 14px;
+
     width: 149px;
     height: 42px;
 
@@ -106,4 +127,8 @@ form #container #fields-container .buttons #draw-friends {
 
 form #container #fields-container .buttons #draw-friends:hover {
     background: #394de0;
+}
+
+form #container #fields-container .container-names-numbers .container-friend #remove-friend {
+    cursor: pointer;
 }

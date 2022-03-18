@@ -12,75 +12,119 @@
     <title>Amigo Secreto</title>
 </head>
 <body>
-    <form action="">
+    <form action="#">
         <div id="container">
             <h1>Amigo Secreto</h1>
 
-            <div id="fields-container">
+        <div id="fields-container">
+            <div class="container-names-numbers">
 
-                <div class="container-names-numbers">
-
-                    <div class="container-names">
+                <div class="container-friend">
+                    <div class="name">
                         <fieldset>
                             <legend for="name">Nome</legend>
                             <input type="text" placeholder="Maria Silva">
                         </fieldset>
-                        
+                    </div>
+
+                    <div class="number">
                         <fieldset>
-                            <legend for="name">Nome</legend>
-                            <input type="text" placeholder="Joana Batista">
-                        </fieldset>
-                        
-                        <fieldset>
-                            <legend for="name">Nome</legend>
-                            <input type="text" placeholder="Matheus Oliveira">
-                        </fieldset>
-                        
-                        <fieldset>
-                            <legend for="name">Nome</legend>
-                            <input type="text" placeholder="Jorge Santos">
+                            <legend for="number">Número</legend>
+                            <input type="text" placeholder="(11) 98425-2302" onkeydown ="Mask.apply(this,'formatTelephone')">
                         </fieldset>
                     </div>
 
-                    <div class="container-numbers">
+                    <span id="remove-friend" onclick="removeFriend(this)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="20" fill="red" class="bi bi-trash" viewBox="0 0 16 16" >
+                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                        </svg>
+                    </span>
+                </div>
 
+                <div class="container-friend">
+                    <div class="name">
                         <fieldset>
-                            <legend for="number">Número</legend>
-                            <input type="text" placeholder="(11) 98425-2302">
+                            <legend for="name">Nome</legend>
+                            <input type="text" placeholder="Lucas Motta">
                         </fieldset>
-                        
-                        <fieldset>
-                            <legend for="number">Número</legend>
-                            <input type="text" placeholder="(71) 99533-5428">
-                        </fieldset>
-                        
-                        <fieldset>
-                            <legend for="number">Número</legend>
-                            <input type="text" placeholder="(85) 97427-9948">
-                        </fieldset>
-                        
-                        <fieldset>
-                            <legend for="number">Número</legend>
-                            <input type="text" placeholder="(65) 98763-8682">
-                        </fieldset>
-                        
                     </div>
 
+                    <div class="number">
+                        <fieldset>
+                            <legend for="number">Número</legend>
+                            <input type="text" placeholder="(11) 92421-0122" onkeydown ="Mask.apply(this,'formatTelephone')">
+                        </fieldset>
+                    </div>
+
+                    <span id="remove-friend" onclick="removeFriend(this)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="20" fill="red" class="bi bi-trash" viewBox="0 0 16 16" >
+                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                        </svg>
+                    </span>
                 </div>
 
-                <div class="buttons">
-                    <button id="add-friend">
-                        Adicionar Amigo
-                    </button>
+                <div class="container-friend">
+                    <div class="name">
+                        <fieldset>
+                            <legend for="name">Nome</legend>
+                            <input type="text" placeholder="Bruna Oliveira">
+                        </fieldset>
+                    </div>
 
-                    <button id="draw-friends">
-                        Sortear
-                    </button>
+                    <div class="number">
+                        <fieldset>
+                            <legend for="number">Número</legend>
+                            <input type="text" placeholder="(11) 98725-0002" onkeydown ="Mask.apply(this,'formatTelephone')">
+                        </fieldset>
+                    </div>
+
+                    <span id="remove-friend" onclick="removeFriend(this)"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="20" fill="red" class="bi bi-trash" viewBox="0 0 16 16" >
+                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                        </svg>
+                    </span>
                 </div>
+
+                <div class="container-friend">
+                    <div class="name">
+                        <fieldset>
+                            <legend for="name">Nome</legend>
+                            <input type="text" placeholder="Bruno Almeida">
+                        </fieldset>
+                    </div>
+
+                    <div class="number">
+                        <fieldset>
+                            <legend for="number">Número</legend>
+                            <input type="text" placeholder="(11) 90435-9902" onkeydown ="Mask.apply(this,'formatTelephone')">
+                        </fieldset>
+                    </div>
+
+                    <span id="remove-friend" onclick="removeFriend(this)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="20" fill="red" class="bi bi-trash" viewBox="0 0 16 16" >
+                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                        </svg>
+                    </span>
+                </div>
+
+            </div> 
+            <div class="buttons">
+                <button id="add-friend">
+                    Adicionar Amigo
+                </button>
+
+                <button id="draw-friends">
+                    Sortear
+                </button>
             </div>
-            
         </div>
 
     </form>
+
+    <script src="index.js"></script>
 </body>
 </html>
