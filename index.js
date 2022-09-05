@@ -71,7 +71,7 @@ async function drawFriend(event) {
             }
             users.push(formatFriend)
         }
-        await fetch('http://localhost:3000/users', {
+        await fetch('https://secret-friends-api.herokuapp.com/users', {
              method: 'POST',
              headers: {
                  "Content-Type": "application/json"
@@ -79,5 +79,4 @@ async function drawFriend(event) {
              body: JSON.stringify({users: users})
          })
     }
-    
 }
