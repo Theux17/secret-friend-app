@@ -1,9 +1,9 @@
 const addFriend = document.querySelector('#add-friend')
 const buttonsRemoveFriend = document.querySelectorAll('#remove-friend')
 
-const containerFriend = document.querySelector('#fields-container .container-names-numbers .container-friend')
-const container = document.querySelector('#fields-container .container-names-numbers')
-let friends = document.querySelectorAll('#fields-container .container-names-numbers .container-friend')
+const containerFriend = document.querySelector('#fields-container .container-names-emails .container-friend')
+const container = document.querySelector('#fields-container .container-names-emails')
+let friends = document.querySelectorAll('#fields-container .container-names-emails .container-friend')
 let totalFriends = friends.length
 const buttonDrawFriends = document.querySelector('#draw-friends')
 buttonDrawFriends.addEventListener('click', drawFriend)
@@ -57,25 +57,27 @@ const Mask = {
 async function drawFriend(event) {
     event.preventDefault()
     const result = totalFriends % 2
-    if(result !== 0) alert(`O total de amigos tem que ser par, e o total foi ${totalFriends}.`)
-    
-    const users = []
-    for(friend of friends) {
-        const name = friend.querySelector('.name input').value
-        const number = friend.querySelector('.number input').value
- 
-        const formatFriend = {
-            name,
-            telephone: number
+    if(result !== 0) {
+      return alert(`O total de amigos tem que ser par, e o total foi ${totalFriends}.`)
+    } else { 
+        const users = []
+        for(friend of friends) {
+            const name = friend.querySelector('.name input').value
+            const email = friend.querySelector('.email input').value
+            
+            const formatFriend = {
+                name,
+                email
+            }
+            users.push(formatFriend)
         }
-        users.push(formatFriend)
+        await fetch('http://localhost:3000/users', {
+             method: 'POST',
+             headers: {
+                 "Content-Type": "application/json"
+             },
+             body: JSON.stringify({users: users})
+         })
     }
     
-    await fetch('http://localhost:3000/users', {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({users: users})
-    })
 }

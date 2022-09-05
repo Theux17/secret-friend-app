@@ -19,7 +19,7 @@ form #container {
     margin-top: 50px;
 }  
 
-form #container #fields-container .container-names-numbers .container-friend{
+form #container #fields-container .container-names-emails .container-friend{
     display: flex;
     align-items: center;
     margin-left: 14px;
@@ -33,7 +33,7 @@ form #container h1 {
     margin-top: 14px;
 }
 
-form #container #fields-container .container-names-numbers input {
+form #container #fields-container .container-names-emails input {
     width: 290.09px;
     height: 35.89px;
 
@@ -45,7 +45,7 @@ form #container #fields-container .container-names-numbers input {
     color: black;
 }
 
-form #container #fields-container .container-names-numbers fieldset legend {
+form #container #fields-container .container-names-emails fieldset legend {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
@@ -53,14 +53,14 @@ form #container #fields-container .container-names-numbers fieldset legend {
     line-height: 18px;
 }
 
-form #container #fields-container .container-names-numbers .container-friend .name fieldset input {
+form #container #fields-container .container-names-emails .container-friend .name fieldset input {
     margin-right: 144.58px;
 }
 
-form #container #fields-container .container-names-numbers .container-numbers fieldset {
+form #container #fields-container .container-names-emails .container-emails fieldset {
     position: relative
 }
-form #container #fields-container .container-names-numbers .container-numbers span {
+form #container #fields-container .container-names-emails .container-emails span {
     position: absolute;
     cursor: pointer;
 }
@@ -129,6 +129,6 @@ form #container #fields-container .buttons #draw-friends:hover {
     background: #394de0;
 }
 
-form #container #fields-container .container-names-numbers .container-friend #remove-friend {
+form #container #fields-container .container-names-emails .container-friend #remove-friend {
     cursor: pointer;
 }
