@@ -61,22 +61,48 @@ async function drawFriend(event) {
       return alert(`O total de amigos tem que ser par, e o total foi ${totalFriends}.`)
     } else { 
         const users = []
-        for(friend of friends) {
-            const name = friend.querySelector('.name input').value
-            const email = friend.querySelector('.email input').value
+        let error = false
+        
+        for (friend of friends) {
+            const name = friend.querySelector(".name input").value;
+            const email = friend.querySelector(".email input").value;
             
-            const formatFriend = {
-                name,
-                email
+            if(!name || !email) {
+                error = true
             }
-            users.push(formatFriend)
+
+            const formatFriend = {
+              name,
+              email,
+            };
+            users.push(formatFriend);
         }
-        await fetch('https://secret-friends-api.herokuapp.com/users', {
-             method: 'POST',
-             headers: {
-                 "Content-Type": "application/json"
-             },
-             body: JSON.stringify({users: users})
-         })
+        
+        if(error) {
+            alert('Preencha todos os campos!')
+            event.stopPropagation()
+        } else {
+            await fetch("https://secret-friends-api.herokuapp.com/users", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ users: users }),
+            }).then((response) => {
+                console.log(response)
+                if(response.status === 201) {
+                    setTimeout(() => {
+                        alert('Sorteio realizado com sucesso!')
+                        location.reload()
+                    }, 1000);
+                }
+
+                if(response.status === 500) {
+                    setTimeout(() => {
+                        alert('Erro ao realizar sorteio.')
+                    }, 1000);
+                }
+            })
+        }
     }
 }
