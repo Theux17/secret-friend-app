@@ -3,6 +3,7 @@
     margin: 0;
     border: none;
     font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
 }
 
 form {
@@ -131,4 +132,23 @@ form #container #fields-container .buttons #draw-friends:hover {
 
 form #container #fields-container .container-names-emails .container-friend #remove-friend {
     cursor: pointer;
+}
+
+
+@media (max-width: 576px) { 
+    form #container #fields-container .container-names-emails input {
+        width: 150px;
+    }
+
+    form #container #fields-container .container-names-emails .container-friend .name fieldset input {
+        margin-right: 14px;
+    }
+
+    form #container #fields-container .buttons #draw-friends {
+        margin: 116px -14%;
+    }
+
+    form #container #fields-container .buttons #add-friend {
+        margin-top: 14px;
+    }
 }
