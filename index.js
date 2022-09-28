@@ -82,6 +82,13 @@ async function drawFriend(event) {
             alert('Preencha todos os campos!')
             event.stopPropagation()
         } else {
+            const loader = document.querySelector('.container-loader');
+            const form = document.querySelector('form');
+            const success = document.querySelector('.container-success');
+
+            form.style.opacity = 0.2;
+            loader.style.display = 'flex';
+
             await fetch("https://secret-friends-api.herokuapp.com/users", {
             method: "POST",
             headers: {
@@ -91,8 +98,10 @@ async function drawFriend(event) {
             }).then((response) => {
                 console.log(response)
                 if(response.status === 201) {
+                    loader.style.display = 'none';
+                    success.style.display = 'flex';
+                    
                     setTimeout(() => {
-                        alert('Sorteio realizado com sucesso!')
                         location.reload()
                     }, 1000);
                 }
