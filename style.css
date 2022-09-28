@@ -136,6 +136,10 @@ form #container #fields-container .container-names-emails .container-friend #rem
 
 
 @media (max-width: 576px) { 
+    form #container{
+        margin-top: 0px;
+    }
+
     form #container #fields-container .container-names-emails input {
         width: 150px;
     }
