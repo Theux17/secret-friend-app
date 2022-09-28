@@ -5,7 +5,7 @@
 
 ## Sobre
 <p>
-  APP Amigo Secreto, projeto realizado apenas para estudos, a ideia do projeto é facilitar o sorteio dos nomes na hora de realizar o "amigo secreto", aonde os nomes não será duplicado e será único para cada integrante, e o nome será enviado para o email do usuário.
+  APP Amigo Secreto, projeto realizado apenas para estudos, a ideia do projeto é facilitar o sorteio dos nomes na hora de realizar o "amigo secreto". O sorteio será realizado pela API criada para realizar o sorteio e o disparo do email com o nome sorteado para o usuário, e seguindo a lógica para os nomes não serem duplicados e sim único para cada usuário.
 </p>
 
 <br>
