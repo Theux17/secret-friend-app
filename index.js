@@ -4,13 +4,25 @@ const buttonsRemoveFriend = document.querySelectorAll('#remove-friend')
 const containerFriend = document.querySelector('#fields-container .container-names-emails .container-friend')
 const container = document.querySelector('#fields-container .container-names-emails')
 let friends = document.querySelectorAll('#fields-container .container-names-emails .container-friend')
-let totalFriends = friends.length
 const buttonDrawFriends = document.querySelector('#draw-friends')
+const errorMessage = document.querySelector('.error p');
+const error = document.querySelector('.error');
+
+let totalFriends = friends.length
 buttonDrawFriends.addEventListener('click', drawFriend)
 
 addFriend.addEventListener('click', newFriend)
 
 const newContainer = [...container.children]
+
+function showError (message) {
+    error.style.display = 'block';
+    errorMessage.innerText = message;
+    setTimeout(() => {
+        error.style.display = 'none';
+    }, 2000);
+}
+
 function newFriend (event) {
     
     event.preventDefault()
@@ -27,7 +39,7 @@ function removeFriend (element) {
     if(element.parentNode.parentNode.children.length > 4) {
         element.parentNode.remove()
     } else {
-        alert('Ação inválida! Mínimo de 4 participantes.')
+        showError('Ação inválida! Mínimo de 4 participantes.')
     }
 }
 
@@ -56,9 +68,12 @@ const Mask = {
 
 async function drawFriend(event) {
     event.preventDefault()
+
+    totalFriends = friends.length
     const result = totalFriends % 2
+    
     if(result !== 0) {
-      return alert(`O total de amigos tem que ser par, e o total foi ${totalFriends}.`)
+        showError(`O total de amigos tem que ser par, e o total foi ${totalFriends}.`)
     } else { 
         const users = []
         let error = false
@@ -79,7 +94,7 @@ async function drawFriend(event) {
         }
         
         if(error) {
-            alert('Preencha todos os campos!')
+            showError('Preencha todos os campos!')
             event.stopPropagation()
         } else {
             const loader = document.querySelector('.container-loader');
@@ -107,9 +122,7 @@ async function drawFriend(event) {
                 }
 
                 if(response.status === 500) {
-                    setTimeout(() => {
-                        alert('Erro ao realizar sorteio.')
-                    }, 1000);
+                    showError('Erro ao realizar sorteio.')
                 }
             })
         }

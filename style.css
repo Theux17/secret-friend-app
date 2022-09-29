@@ -38,7 +38,7 @@ form #container #fields-container .container-names-emails input {
     width: 290.09px;
     height: 35.89px;
 
-    background: #F0F2EB;
+    border: 1px solid #F0F2EB;
     border-radius: 4px;
     margin-bottom: 16px;
 
@@ -132,6 +132,7 @@ form #container #fields-container .buttons #draw-friends:hover {
 
 form #container #fields-container .container-names-emails .container-friend #remove-friend {
     cursor: pointer;
+    margin-top: 10px;
 }
 
 
@@ -210,4 +211,17 @@ form #container #fields-container .container-names-emails .container-friend #rem
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-  }
+}
+
+.error {
+    position: absolute;
+    display: none;
+    padding: 8px 16px;
+    color: #5f2120;
+    background: #fdeded;
+    width: 300px;
+    right: 0;
+    margin-right: 20px;
+    margin-top: 20px;
+    border-radius: 4px;
+}
