@@ -100,8 +100,11 @@ async function drawFriend(event) {
             const loader = document.querySelector('.container-loader');
             const form = document.querySelector('form');
             const success = document.querySelector('.container-success');
+            const backgroundLoading = document.querySelector('.backgroud-loading');
 
             form.style.opacity = 0.2;
+            backgroundLoading.style.display = 'block';
+            scrollTo(0, 0)
             loader.style.display = 'flex';
 
             await fetch("https://secret-friends-api.herokuapp.com/users", {
@@ -111,7 +114,6 @@ async function drawFriend(event) {
             },
             body: JSON.stringify({ users: users }),
             }).then((response) => {
-                console.log(response)
                 if(response.status === 201) {
                     loader.style.display = 'none';
                     success.style.display = 'flex';

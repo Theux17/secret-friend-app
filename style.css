@@ -22,6 +22,7 @@ form #container {
 
 form #container #fields-container .container-names-emails .container-friend{
     display: flex;
+    gap: 20px;
     align-items: center;
     margin-left: 14px;
     margin-right: 14px;
@@ -189,6 +190,16 @@ form #container #fields-container .container-names-emails .container-friend #rem
 
 .container-success .success p {
     margin-top: 8px;
+}
+
+.backgroud-loading {
+    display: none;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
 }
 
 .container-loader .loader {
