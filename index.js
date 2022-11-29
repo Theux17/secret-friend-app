@@ -65,6 +65,45 @@ const Mask = {
 
     return value;
   },
+
+  isEmail(input, value) {
+    const emails = document.querySelectorAll(".email input");
+    const emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+    const emailInvalid = Array.from(emails).find(
+      (email) => email.value && !email.value.match(emailFormat)
+    );
+    console.log(emailInvalid);
+    let error = null;
+
+    if (emailInvalid) {
+      error = "Email inválido!";
+      changeBorder(emailInvalid, "red");
+      showError(error);
+      lockButton();
+    }
+
+    if (!value.match(emailFormat)) {
+      error = "Email inválido!";
+      changeBorder(input, "red");
+      showError(error);
+      lockButton();
+    } else {
+      changeBorder(input, "#F0F2EB");
+    }
+
+    if (!emailInvalid && value.match(emailFormat)) {
+      buttonDrawFriends.disabled = false;
+      buttonDrawFriends.style.cursor = "pointer";
+      buttonDrawFriends.style.background = "#2E42E6";
+      buttonDrawFriends.style.color = "#EEEFEC";
+    }
+
+    return {
+      error,
+      value,
+    };
+  },
 };
 
 async function drawFriend(event) {
@@ -132,4 +171,16 @@ async function drawFriend(event) {
       });
     }
   }
+}
+
+function lockButton() {
+  buttonDrawFriends.disabled = true;
+  buttonDrawFriends.style.cursor = "not-allowed";
+  buttonDrawFriends.style.background = "#e6e6e6";
+  buttonDrawFriends.style.color = "black";
+}
+
+function changeBorder(input, color) {
+  input.style.border = `1px solid ${color}`;
+  return input;
 }

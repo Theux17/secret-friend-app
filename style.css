@@ -35,13 +35,16 @@ form #container h1 {
     margin-top: 14px;
 }
 
+form #container #fields-container .container-friend {
+    margin-bottom: 16px;
+}
+
 form #container #fields-container .container-names-emails input {
     width: 290.09px;
     height: 35.89px;
 
     border: 1px solid #F0F2EB;
     border-radius: 4px;
-    margin-bottom: 16px;
 
     padding-left: 8px;
     color: black;
