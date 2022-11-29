@@ -73,7 +73,6 @@ const Mask = {
     const emailInvalid = Array.from(emails).find(
       (email) => email.value && !email.value.match(emailFormat)
     );
-    console.log(emailInvalid);
     let error = null;
 
     if (emailInvalid) {
